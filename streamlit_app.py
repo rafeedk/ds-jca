@@ -42,11 +42,12 @@ fig = px.scatter_mapbox(
     lat="Latitude",
     lon="Longitude",
     color="Location",
+    size="Price"
     zoom=10,
     height=500,
     width=800,
     hover_name="Price",
-    hover_data=["Distance from Johan Cruyff Arena", "Location, m"],
+    hover_data=["Distance from Johan Cruyff Arena", "Location"],
     labels={"color": "Locations"},
 )
 fig.update_geos(center=dict(lat=dataframe.iloc[0][2], lon=dataframe.iloc[0][3]))
