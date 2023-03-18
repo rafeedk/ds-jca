@@ -34,7 +34,7 @@ dataframe["Location"] = dataframe["Location"].replace(
 
 # Display dataframe and text
 st.dataframe(dataframe)
-st.markdown("The map below shows all the Airbnb listings less than ₹10000 with a light blue dot and Johan Cruyff Arena with a dark blue dot.")
+st.markdown("The map below shows all the Airbnb listings less than ₹10K with a light blue dot and Johan Cruyff Arena with a dark blue dot.")
 
 # Create the plotly express figure
 fig = px.scatter_mapbox(
