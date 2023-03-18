@@ -4,7 +4,7 @@ import streamlit as st
 
 # Display title and text
 st.title("Week 1 - Data and visualization")
-st.markdown("Here we can see the dataframe created during this weeks project.")
+st.markdown("Here we can see the dataframe created from the raw data of AirBnB Amsterdam.")
 
 # Read dataframe
 dataframe = pd.read_csv(
@@ -20,8 +20,8 @@ dataframe = pd.read_csv(
 )
 
 # We have a limited budget, therefore we would like to exclude
-# listings with a price above 100 pounds per night
-dataframe = dataframe[dataframe["Price"] <= 100]
+# listings with a price above 11000 rupees per night
+dataframe = dataframe[dataframe["Price"] <= 11000]
 
 # Display as integer
 dataframe["Airbnb Listing ID"] = dataframe["Airbnb Listing ID"].astype(int)
@@ -34,7 +34,7 @@ dataframe["Location"] = dataframe["Location"].replace(
 
 # Display dataframe and text
 st.dataframe(dataframe)
-st.markdown("Below is a map showing all the Airbnb listings with a red dot and Johan Cruyff Aren with a blue dot.")
+st.markdown("The map below shows all the Airbnb listings less than ₹11000 with a light blue dot and Johan Cruyff Arena with a dark blue dot.")
 
 # Create the plotly express figure
 fig = px.scatter_mapbox(
