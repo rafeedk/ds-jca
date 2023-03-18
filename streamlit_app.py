@@ -41,7 +41,7 @@ fig = px.scatter_mapbox(
     dataframe,
     lat="Latitude",
     lon="Longitude",
-    color="Johan Cruyff Arena",
+    color="Location",
     zoom=10,
     height=500,
     width=800,
