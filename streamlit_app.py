@@ -20,8 +20,8 @@ dataframe = pd.read_csv(
 )
 
 # We have a limited budget, therefore we would like to exclude
-# listings with a price above 11000 rupees per night
-dataframe = dataframe[dataframe["Price"] <= 11000]
+# listings with a price above 10000 rupees per night
+dataframe = dataframe[dataframe["Price"] <= 10000]
 
 # Display as integer
 dataframe["Airbnb Listing ID"] = dataframe["Airbnb Listing ID"].astype(int)
@@ -34,7 +34,7 @@ dataframe["Location"] = dataframe["Location"].replace(
 
 # Display dataframe and text
 st.dataframe(dataframe)
-st.markdown("The map below shows all the Airbnb listings less than ₹11000 with a light blue dot and Johan Cruyff Arena with a dark blue dot.")
+st.markdown("The map below shows all the Airbnb listings less than ₹10000 with a light blue dot and Johan Cruyff Arena with a dark blue dot.")
 
 # Create the plotly express figure
 fig = px.scatter_mapbox(
@@ -42,7 +42,6 @@ fig = px.scatter_mapbox(
     lat="Latitude",
     lon="Longitude",
     color="Location",
-    size="Airbnb Listing Id",
     zoom=10,
     height=500,
     width=800,
